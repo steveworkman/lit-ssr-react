@@ -25,13 +25,13 @@ export default function Home() {
       <h1>Lit NextJS properties bug</h1>
       <p>These two are client-side rendered</p>
       <SimpleButtonClient>I am CSRd</SimpleButtonClient>
-      <SimpleButtonClient disabled={true}>I am CSRd and disabled</SimpleButtonClient>
+      <SimpleButtonClient disabled={true} inertreflected="reflected">I am CSRd and disabled</SimpleButtonClient>
       <p>These two are wrapped SSR</p>
       <SimpleButton>I am wrapped</SimpleButton>
-      <SimpleButton disabled={true}>I am wrapped and disabled</SimpleButton>
+      <SimpleButton disabled={true} inertreflected="reflected">I am wrapped and disabled</SimpleButton>
       <p>These two are raw lit elements</p>
       <simple-button>I am a SSR-ed Lit element</simple-button>
-      <simple-button disabled>I am a SSR-ed Lit element and disabled</simple-button>
+      <simple-button disabled inertreflected="reflected">I am a SSR-ed Lit element and disabled</simple-button>
       </main>
     </>
   )

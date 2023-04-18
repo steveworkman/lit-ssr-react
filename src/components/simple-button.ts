@@ -59,16 +59,19 @@ const styles = css`
 
 export default class SimpleButton extends LitElement {
   static styles = styles;
-  declare disabled;
+  declare disabled: boolean;
+  declare inertreflected?: string;
 
   constructor() {
     super();
     this.disabled = false;
+    this.inertreflected = undefined;
   }
 
   static get properties(): PropertyDeclarations {
     return {
       disabled: { type: Boolean, reflect: true },
+      inertreflected: { type: String, reflect: true },
     };
   }
 
@@ -95,7 +98,10 @@ export default class SimpleButton extends LitElement {
 
   render(): TemplateResult {
     return html`
-      <button ?disabled=${this.disabled}>
+      <button
+        ?disabled=${this.disabled}
+        data-reflected="${this.inertreflected}"
+      >
         <slot></slot>
       </button>
     `;
