@@ -2,6 +2,7 @@ import Head from 'next/head'
 import styles from '@/styles/Home.module.css'
 import { SimpleButtonClient } from '../components/csr-button';
 import { SimpleButton } from '../components/wrapped-simple-button';
+import SimpleButtonStyled from "../components/styled-component";
 import "../components/simple-button";
 
 declare global {
@@ -32,6 +33,9 @@ export default function Home() {
       <p>These two are raw lit elements</p>
       <simple-button>I am a SSR-ed Lit element</simple-button>
       <simple-button disabled inertreflected="reflected">I am a SSR-ed Lit element and disabled</simple-button>
+      <p>These are two Styled Components</p>
+      <SimpleButtonStyled as="simple-button">I am a styled-component</SimpleButtonStyled>
+      <SimpleButtonStyled as="simple-button" disabled={true} inertreflected="reflected">I am a styled-component</SimpleButtonStyled>
       </main>
     </>
   )
